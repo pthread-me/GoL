@@ -15,7 +15,7 @@
 | Enter | start simulation | 
 | q | pause (only while simulation is running)|
 | r | reset board |
-
+| Esc | Close program (q fisrt if still running)|
 
 ### Todo
 
