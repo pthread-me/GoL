@@ -1,13 +1,18 @@
-#include <vector>
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <vector>
+#include <cassert>
 
 #ifndef BOARD
 #define BOARD
+
+
 namespace GoL {
 typedef struct{
 	sf::RectangleShape cell;
 	bool state;
 } Cell;
+
+
 
 class Board{
 		size_t  grid_rows;

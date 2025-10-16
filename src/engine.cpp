@@ -1,5 +1,4 @@
 #include<engine.hpp>
-#include <print>
 #include <vector>
 
 GoL::Engine::Engine(std::vector<size_t> init, size_t x, size_t y):

@@ -1,9 +1,9 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Vector2.hpp>
-#include <board.hpp>
-#include <print>
 #include <stdexcept>
 #include <vector>
+
+#include <board.hpp>
 
 GoL::Board::Board(size_t rows, size_t cols, size_t tile_dim):
 	grid_rows(rows), 
@@ -21,7 +21,6 @@ GoL::Board::Board(size_t rows, size_t cols, size_t tile_dim):
 
 		grid[i].cell.setPosition(sf::Vector2<float>(static_cast<float>(x), static_cast<float>(y)));
 		grid[i].cell.setFillColor(sf::Color::Black);
-		
 	}
 }
 

@@ -1,4 +1,3 @@
-#include <condition_variable>
 #include <print>
 #include <chrono>
 #include <thread>
@@ -12,7 +11,7 @@ GoL::Game::Game(sf::RenderWindow& win):
 	board(grid_rows, grid_cols, tile_dim)
 {
 
-	std::println("{}, {}", grid_rows, grid_cols);
+	std::println("grid dimensions: {}x{}", grid_rows, grid_cols);
 
 }
 
@@ -41,12 +40,15 @@ void GoL::Game::start_game(sf::RenderWindow& win){
 		update = runner.run();
 		win.handleEvents([&](const sf::Event::KeyPressed& key){
 			if(key.code == sf::Keyboard::Key::Q){
+				std::println("pause");
 				quit = true;
+			}else if(key.code == sf::Keyboard::Key::Escape){
+				quit = true;
+				win.close();
 			}	
 		});
 
 		if(quit || update == nullptr){ 
-			std::println("Done");
 			break;
 		}
 
@@ -62,18 +64,20 @@ void GoL::Game::start_game(sf::RenderWindow& win){
 //					Event Handlers
 //-------------------------------------------------------
 void GoL::Game::key_event(const sf::Event::KeyPressed& key, sf::RenderWindow& win){
-	std::println("Pressed:");
 	switch (key.code) {
 		case sf::Keyboard::Key::Enter:
+			std::println("start");
 			start_game(win);
 			break;
 
 		case sf::Keyboard::Key::R:
+			std::println("reset");
 			board.reset_board();
 			break;
-
+		
+		case sf::Keyboard::Key::Escape:
+			win.close();
 		default:
-			std::println("Other key");
 			break;
 	}
 	

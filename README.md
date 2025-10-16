@@ -1,6 +1,27 @@
 # Game Of Life
 
-Requires SFML, C++23 and CMake
-need to fix the window resizing and add a drag to select.
+### Dependencies
+| Requires | Version | Note |
+| :------: | :-----: | :--: |
+| SFML | v3.0.2 | [link](https://www.sfml-dev.org/download/ "Link to the SFML website")
+| Cpp | c++23 | - |
+| CMake | v4.0 | Modifying CMakeLists.txt to your cmake version should work fine |
 
-left mouse click to select cells, press Enter to start, q to pause and r to restart the board :)
+### Usage
+
+| Command | Action |
+| :-----: | :----: |
+|left mouse click | toggle select/deselect cells |
+| Enter | start simulation | 
+| q | pause (only while simulation is running)|
+| r | reset board |
+
+
+### Todo
+
+| Issue | Note |
+| :---: | :--: |
+| Fix window resizing | i3 window resizing "stretches" pixels which break the program |
+| add drag | not the art, but the ability to select mutiple cells at a time |
+| allow circular "shift"/loopback | modulo on cell position basically |
+| last cell in col display | last if window size is not divisible by cell size (pixels) the first cell extend to the last column from the right, or smt |

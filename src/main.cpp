@@ -10,7 +10,6 @@
 #include <print>
 #include <vector>
 
-#include <execinfo.h>
 #include <game.hpp>
 
 

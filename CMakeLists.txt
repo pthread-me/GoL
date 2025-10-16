@@ -11,7 +11,7 @@ set(SRCs src/main.cpp src/board.cpp src/game.cpp src/engine.cpp)
 add_executable(main ${SRCs})
 target_include_directories(main PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-find_package(SFML REQUIRED COMPONENTS Graphics Window)
+find_package(SFML 3.0.2 REQUIRED COMPONENTS Graphics Window)
 target_link_libraries(main PRIVATE sfml-graphics sfml-window sfml-system)
 
 
@@ -22,6 +22,12 @@ target_compile_options(main PUBLIC
 	-Wconversion
 	-Waddress
 	-Wpedantic
+	-Werror
+	-pedantic-errors
+	-Wabi
+	-Wnrvo
+	-Wformat=2
+
 	-O3
 )
 
