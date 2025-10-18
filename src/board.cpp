@@ -21,6 +21,8 @@ GoL::Board::Board(size_t rows, size_t cols, size_t tile_dim):
 
 		grid[i].cell.setPosition(sf::Vector2<float>(static_cast<float>(x), static_cast<float>(y)));
 		grid[i].cell.setFillColor(sf::Color::Black);
+		grid[i].cell.setOutlineThickness(static_cast<float>(-0.5));
+		grid[i].cell.setOutlineColor(sf::Color(25, 25, 25));
 	}
 }
 
